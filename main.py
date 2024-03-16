@@ -5,7 +5,6 @@ from defaults import *
 from makefile_template import generate_Makefile
 from inc_common1_template import generate_inc_common1
 from inc_common2_template import generate_inc_common2
-from inc_src_template import generate_inc_src
 import os
 
 # ****************** User inputs **************** #
@@ -28,7 +27,6 @@ def main():
 
     inc_common2_content = generate_inc_common2()
 
-    inc_src_content = generate_inc_src()
 
     ### Step 2: create the directory and the files
     # Step 2a: Create the Makefile file
@@ -53,7 +51,7 @@ def main():
     # Step 2c: add the inc_src file
     file_path = os.path.join(directory, "inc_src.mk")
     with open(file_path, 'w') as file:
-        file.write(inc_src_content)
+        file.write("# No files added yet!")
 
 if __name__ == '__main__':
     main()
