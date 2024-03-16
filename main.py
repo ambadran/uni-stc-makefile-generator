@@ -7,15 +7,7 @@ from inc_common1_template import generate_inc_common1
 from inc_common2_template import generate_inc_common2
 import os
 
-# ****************** User inputs **************** #
-
-### Mandatory Program input
-mcu_variant = "STC8H8K64U_SKDIP28"  #TODO: get them from terminal input
-
-mcu_freq_khz = 35000  #TODO: get them from terminal input
-
-
-def main():
+def main(mcu_variant: str, mcu_freq_khz: int):
     '''
     generates and writes the makefiles
     '''
@@ -54,4 +46,11 @@ def main():
         file.write("# No files added yet!")
 
 if __name__ == '__main__':
-    main()
+
+    ### Mandatory Program input
+    mcu_variant = "STC8H8K64U_SKDIP28"
+
+    mcu_freq_khz = 35000 
+
+
+    main(mcu_variant, mcu_freq_khz)

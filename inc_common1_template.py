@@ -15,7 +15,7 @@ include {uni_stc_dir}makefiles/0-directories.mk
 # Project settings -----------------------------------------------------
 PROJECT_NAME := {project_name}
 PROJECT_FLAGS = -DBUILD_FOR_$(MCU_VARIANT)
-BUILD_ROOT := $(MCU_VARIANT)
+BUILD_ROOT := build
 CONSOLE_BAUDRATE := {console_baudrate}
 CONSOLE_PORT := {console_port}
 ISP_PORT := {isp_port}

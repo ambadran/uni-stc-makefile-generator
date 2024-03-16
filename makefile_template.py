@@ -60,7 +60,7 @@ HAS_DUAL_DPTR := {mcu_specs.has_dual_dptr}
 MCU_VARIANT = {mcu_variant}
 
 include ./Makefiles/inc_common1.mk
-include ./Makefiles/c_src.mk
+include ./Makefiles/inc_src.mk
 include ./Makefiles/inc_common2.mk"""
     return string
 
