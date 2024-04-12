@@ -22,12 +22,19 @@ class STC_SPEC:
 
 ### Define all the STC MCUs to be used here, get the spec values from the datasheet ###
 STC_MCU_dict = {"STC8H8K64U_SKDIP28": STC_SPEC(
-        name='STC8H8K64U_SKDIP28',
-        xram_loc = 0,
-        xram_size = 8192,
-        stack_size = 112,
-        code_size = 65024
-        ) }
+            name='STC8H8K64U_SKDIP28',
+            xram_loc = 0,
+            xram_size = 8192,
+            stack_size = 112,
+            code_size = 65024
+        ),
+        "STC8G1K08_SOP16": STC_SPEC(
+            name='STC8G1K08_SOP16',
+            xram_loc=0,
+            xram_size=1024,
+            stack_size=112,
+            code_size=8000
+            )}
 
 
 ### PC defaults
