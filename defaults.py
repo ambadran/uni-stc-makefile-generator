@@ -14,7 +14,7 @@ class STC_SPEC:
     xram_size: int
     stack_size: int
     code_size: int
-    has_dual_dptr: str = 'y'  # all STC to compiled by SDCC must have dual dptr register
+    has_dual_dptr: str
 
     @property
     def memory_model(self):
@@ -26,14 +26,16 @@ STC_MCU_dict = {"STC8H8K64U_SKDIP28": STC_SPEC(
             xram_loc = 0,
             xram_size = 8192,
             stack_size = 112,
-            code_size = 65024
+            code_size = 65024,
+            has_dual_dptr = 'y'
         ),
         "STC8G1K08_SOP16": STC_SPEC(
             name='STC8G1K08_SOP16',
             xram_loc=0,
             xram_size=1024,
             stack_size=112,
-            code_size=8000
+            code_size=8000,
+            has_dual_dptr = 'y'
             )}
 
 
