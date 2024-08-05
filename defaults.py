@@ -29,6 +29,15 @@ STC_MCU_dict = {"STC8H8K64U_SKDIP28": STC_SPEC(
             code_size = 65024,
             has_dual_dptr = 'y'
         ),
+        "STC8H8K64U_SOP16": STC_SPEC(
+            name='STC8H8K64U_SKDIP28',
+            xram_loc = 0,
+            xram_size = 8192,
+            stack_size = 112,
+            code_size = 65024,
+            has_dual_dptr = 'y'
+        ),
+
         "STC8G1K08_SOP16": STC_SPEC(
             name='STC8G1K08_SOP16',
             xram_loc=0,
@@ -36,7 +45,26 @@ STC_MCU_dict = {"STC8H8K64U_SKDIP28": STC_SPEC(
             stack_size=112,
             code_size=8000,
             has_dual_dptr = 'y'
-            )}
+            ),
+
+        "STC15W408AS_SKDIP28": STC_SPEC(
+            name='STC15W408AS_SKDIP28',
+            xram_loc=0,
+            xram_size=512,
+            stack_size=112,
+            code_size=8000,
+            has_dual_dptr = 'n'
+        ),
+
+        "STC15W408AS_DIP16": STC_SPEC(
+            name='STC15W408AS_DIP16',
+            xram_loc=0,
+            xram_size=512,
+            stack_size=112,
+            code_size=8000,
+            has_dual_dptr = 'n'
+        )
+        }
 
 
 ### PC defaults
