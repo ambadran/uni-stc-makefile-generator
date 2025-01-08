@@ -38,6 +38,16 @@ STC_MCU_dict = {"STC8H8K64U_SKDIP28": STC_SPEC(
             has_dual_dptr = 'y'
         ),
 
+        "STC8H8K64U_PDIP40": STC_SPEC(
+            name='STC8H8K64U_PDIP40',
+            xram_loc = 0,
+            xram_size = 8192,
+            stack_size = 112,
+            code_size = 65024,
+            has_dual_dptr = 'y'
+        ),
+
+
         "STC8G1K08_SOP16": STC_SPEC(
             name='STC8G1K08_SOP16',
             xram_loc=0,
