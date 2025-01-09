@@ -44,17 +44,10 @@ def generate_Makefile(mcu_variant: str, mcu_freq_khz: int):
 # Note: using a system clock around 24MHz works with all MCU
 # having an internal RC oscillator.
 MCU_FREQ_KHZ := {mcu_freq_khz}
-
 STACK_SIZE := {mcu_specs.stack_size}
-
-MEMORY_SIZES := \\
-	--xram-loc {mcu_specs.xram_loc} \\
-	--xram-size {mcu_specs.xram_size} \\
-	--stack-size $(STACK_SIZE) \\
-	--code-size {mcu_specs.code_size} 
-
+XRAM_SIZE := {mcu_specs.xram_size}
+FLASH_SIZE := {mcu_specs.code_size} 
 MEMORY_MODEL := --model-{mcu_specs.memory_model}
-
 HAS_DUAL_DPTR := {mcu_specs.has_dual_dptr}
 
 MCU_VARIANT = {mcu_variant}
