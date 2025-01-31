@@ -7,7 +7,7 @@ from inc_common1_template import generate_inc_common1
 from inc_common2_template import generate_inc_common2
 import os
 
-def main(mcu_variant: str, mcu_freq_khz: int):
+def main(mcu_variant: str, mcu_freq_khz: int, mcu_num: int=1):
     '''
     generates and writes the makefiles
     '''
@@ -15,7 +15,7 @@ def main(mcu_variant: str, mcu_freq_khz: int):
     makefile_content = generate_Makefile(mcu_variant, mcu_freq_khz)
 
     #TODO: implement a check if one of the default values for this function is passed in the command line and should be passed here instead of the default values
-    inc_common1_content = generate_inc_common1()
+    inc_common1_content = generate_inc_common1(num_of_ports=mcu_num)
 
     inc_common2_content = generate_inc_common2()
 

@@ -5,7 +5,6 @@ from dataclasses import dataclass
 import os
 import sys
 
-
 ### MCU defaults
 @dataclass
 class STC_SPEC:
@@ -84,23 +83,36 @@ default_project_name = os.path.basename(os.getcwd())  # defaults to the name of 
 # uni-stc directory path
 default_uni_stc_dir = os.path.expanduser("~/.stc/uni-stc/")
 
-# console_port and isp_port 
-if sys.platform == 'win32':
-    raise NotImplementedError("Need to implement code to find the proper COM port")
-
-elif sys.platform == 'darwin':
-    default_console_port = '/dev/tty.usbserial' #TODO: complete this from mac
-    default_isp_port = '/dev/tty.usbserial' #TODO: complete this from mac
-
-elif sys.platform == 'linux':
-    default_console_port = '/dev/ttyUSB0'
-    default_isp_port = '/dev/ttyUSB0'
-
-else:
-    raise NotImplementedError("unknown operating system")
-
 # console_baudrate
 default_console_baudrate = 115200
+
+# console_port and isp_port 
+def get_port(num):
+    '''
+    returns the default path of the TTL converter in each system 
+    Parameter num is which ttl converter path to return in case >1
+    stc uC to program at same time
+    '''
+    if num < 0:
+        raise ValueError("wrong num range")
+
+    if sys.platform == 'win32':
+        raise NotImplementedError("Need to implement code to find the proper COM port")
+
+    elif sys.platform == 'darwin':
+
+        # mac paths are wierd like /dev/tty.usbserial101
+        # this dictionary is to link the id of the stc mcu and the wierd numbering scheme of mac
+        NUM_TO_MAC_DIGIT = [101, 102]
+
+        return f"/dev/tty.usbserial{NUM_TO_MAC_DIGIT[num]}"
+
+    elif sys.platform == 'linux':
+        return f"/dev/ttyUSB{num}"
+
+    else:
+        raise NotImplementedError("unknown operating system")
+
 
 
 
