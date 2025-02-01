@@ -28,6 +28,7 @@ def cli():
     parser.add_argument('command', type=str, choices=supported_commands, help='`new` to create Makefiles for this project, `update` to update SRC files')
     parser.add_argument('mcu_variant', type=str, nargs='?', default='', help='STC MCU variant, e.g- STC8H8K64U_SKDIP28')
     parser.add_argument('mcu_freq_khz', type=int, nargs='?', default=0, help='STC MCU running frequency in kHz, e.g - 35000 for 35MHz')
+    parser.add_argument('lcd', type=str, nargs='*', default='', help="LCD Driver support")
     #TODO: add an optional parameter for the number of mcus to include, it must default to 1.
 
     # Parse the arguments

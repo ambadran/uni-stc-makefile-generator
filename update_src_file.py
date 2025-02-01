@@ -12,9 +12,11 @@ if any is found it addes them in the inc_src.mk file
 import os
 from defaults import default_uni_stc_dir
 
+#TODO: don't add files that is commented
 def update_src_file():
     '''
     Re-writes the inc_src.mk file with current needed src files
+    
     '''
     # Step 1: get the names of all the files in the project directory that could have a `#include` statement
     #           also find the project source files to be added too in step5
